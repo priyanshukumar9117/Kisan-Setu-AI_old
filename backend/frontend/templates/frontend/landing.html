@@ -1,0 +1,86 @@
+{% extends 'frontend/base.html' %}
+{% block title %}Kisan_Setu AI - Smart Farming Guidance{% endblock %}
+{% block page_name %}home{% endblock %}
+{% block content %}
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Smart Farming Guidance at Your Fingertips</h1>
+        <p class="hero-tagline">Get reliable advice on crops, weather, fertilizers, pests, and market prices in simple Hindi and English</p>
+        <div class="hero-actions">
+            {% if user.is_authenticated %}
+                <a href="{% url 'chat' %}" class="btn btn-primary">💬 Ask Your Question</a>
+                <a href="{% url 'dashboard' %}" class="btn btn-secondary">📊 Go to Dashboard</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn btn-primary">🚀 Get Started</a>
+                <a href="{% url 'about' %}" class="btn btn-outline">Learn More</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="hero-visual">
+        <div class="hero-card">
+            <div class="hero-icon">🌾</div>
+            <h2>Trusted Agricultural Assistant</h2>
+            <p>Your personal farming advisor, available 24/7 to help you make better farming decisions.</p>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2rem;">Why Choose Kisan_Setu AI?</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🌾</div>
+            <h3 class="feature-title">Crop Advice</h3>
+            <p class="feature-desc">Learn best practices for sowing, irrigation, pest management, and harvest timing for maximum yield.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">☀️</div>
+            <h3 class="feature-title">Weather Alerts</h3>
+            <p class="feature-desc">Understand local weather trends and prepare for changing conditions. Plan your farm work accordingly.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💧</div>
+            <h3 class="feature-title">Fertilizer Tips</h3>
+            <p class="feature-desc">Get personalized recommendations on using the right nutrients and avoid overuse for healthier fields.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3 class="feature-title">Market Prices</h3>
+            <p class="feature-desc">Stay updated with real-time crop prices and make smarter selling decisions for better income.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🐛</div>
+            <h3 class="feature-title">Pest & Disease Guide</h3>
+            <p class="feature-desc">Identify common pests and diseases with detailed symptoms and organic/chemical solutions.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🗣️</div>
+            <h3 class="feature-title">Voice Support</h3>
+            <p class="feature-desc">Ask questions in English, Hindi, or Bhojpuri. Get answers in your preferred language with voice output.</p>
+        </div>
+    </div>
+</section>
+
+<section style="margin-top: 4rem; padding: 2rem; background: var(--surface); border-radius: 18px; box-shadow: var(--shadow);">
+    <h2 style="text-align: center; margin-bottom: 1.5rem;">How It Works</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+        <div style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">1️⃣</div>
+            <h3>Ask Your Question</h3>
+            <p style="color: var(--text-muted);">Use text or voice to ask anything about farming</p>
+        </div>
+        <div style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">2️⃣</div>
+            <h3>Get Smart Advice</h3>
+            <p style="color: var(--text-muted);">AI analyzes your question and local data</p>
+        </div>
+        <div style="text-align: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">3️⃣</div>
+            <h3>Take Action</h3>
+            <p style="color: var(--text-muted);">Apply the recommendations to improve your farm</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

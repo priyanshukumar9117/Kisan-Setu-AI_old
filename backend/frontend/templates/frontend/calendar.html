@@ -1,0 +1,62 @@
+{% extends 'frontend/base.html' %}
+{% block title %}Farm Calendar - Kisan_Setu AI{% endblock %}
+{% block page_name %}calendar{% endblock %}
+{% block content %}
+
+<h1>Farm Calendar - April 2026</h1>
+<p style="color: var(--text-muted); margin-bottom: 2rem;">Plan your farming activities for the month</p>
+
+<div class="card" style="max-width: 800px;">
+    <h2 style="margin-top: 0;">April Schedule</h2>
+    <div class="calendar-grid"></div>
+</div>
+
+<div class="card" style="max-width: 800px; margin-top: 2rem;">
+    <h2 style="margin-top: 0;">Monthly Tasks</h2>
+    <div style="display: grid; gap: 1rem;">
+        <div style="padding: 1rem; background: #fff3cd; border-radius: 12px;">
+            <strong style="color: #856404;">📋 Week 1:</strong> Prepare fields for wheat sowing. Check soil moisture and apply basal fertilizer.
+        </div>
+        <div style="padding: 1rem; background: #e2f9ff; border-radius: 12px;">
+            <strong style="color: #004085;">🌾 Week 2:</strong> Start maize sowing if rain is expected. Monitor clay content in soil.
+        </div>
+        <div style="padding: 1rem; background: #f8f9fa; border-radius: 12px;">
+            <strong style="color: #383d41;">💧 Week 3:</strong> First irrigation for standing crops. Check for pest presence in evening.
+        </div>
+        <div style="padding: 1rem; background: #ede7f6; border-radius: 12px;">
+            <strong style="color: #663399;">🍃 Week 4:</strong> Spray fungicide if humidity is high. Apply NPK fertilizer to growing crops.
+        </div>
+    </div>
+</div>
+
+<div class="card" style="max-width: 800px; margin-top: 2rem;">
+    <h2 style="margin-top: 0;">Crop-Specific Recommendations</h2>
+    <div class="feature-grid">
+        <div>
+            <h3>🌾 Wheat</h3>
+            <ul style="color: var(--text-muted); padding-left: 1.5rem;">
+                <li>Harvesting expected mid-April</li>
+                <li>Monitor for leaf rust</li>
+                <li>Prepare for threshing</li>
+            </ul>
+        </div>
+        <div>
+            <h3>�しる Maize</h3>
+            <ul style="color: var(--text-muted); padding-left: 1.5rem;">
+                <li>Ideal sowing window open</li>
+                <li>Prepare high quality seeds</li>
+                <li>Plan irrigation schedule</li>
+            </ul>
+        </div>
+        <div>
+            <h3>🫘 Pulses</h3>
+            <ul style="color: var(--text-muted); padding-left: 1.5rem;">
+                <li>Monitor moisture for ripening</li>
+                <li>Watch for pod borer</li>
+                <li>Harvest when pods turn brown</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

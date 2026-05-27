@@ -1,0 +1,30 @@
+{% extends 'frontend/base.html' %}
+{% block title %}Chat History - Kisan_Setu AI{% endblock %}
+{% block page_name %}history{% endblock %}
+{% block content %}
+
+<h1>Chat History</h1>
+<p style="color: var(--text-muted); margin-bottom: 2rem;">Your previous conversations with Kisan_Setu AI</p>
+
+<div class="history-list">
+    {% if chat_history %}
+        {% for chat in chat_history %}
+            <div class="history-item">
+                <div class="history-query">👤 You: {{ chat.query }}</div>
+                <div class="history-response">🤖 AI: {{ chat.response|truncatewords:20 }}</div>
+                <div class="history-time">📅 {{ chat.created_at|date:"d M Y, H:i" }}</div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="card" style="text-align: center; padding: 3rem;">
+            <p style="font-size: 1.1rem; color: var(--text-muted);">
+                📭 No chat history yet. Start asking questions to build your history!
+            </p>
+            <a href="{% url 'chat' %}" class="btn btn-primary" style="margin-top: 1rem;">
+                💬 Go to Chat
+            </a>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

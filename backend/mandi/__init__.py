@@ -1,0 +1,1 @@
+# Mandi prices service module

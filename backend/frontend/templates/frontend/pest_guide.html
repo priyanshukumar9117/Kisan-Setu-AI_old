@@ -1,0 +1,187 @@
+{% extends 'frontend/base.html' %}
+{% block title %}Pest & Disease Guide - Kisan_Setu AI{% endblock %}
+{% block page_name %}pest-guide{% endblock %}
+{% block content %}
+
+<h1>Pest & Disease Guide</h1>
+<p style="color: var(--text-muted); margin-bottom: 2rem;">Identify and manage common pests and diseases in Bihari crops</p>
+
+<div class="pest-grid">
+    <!-- Aphid -->
+    <div class="pest-card">
+        <div class="pest-header">
+            <h3 class="pest-name">🐜 Aphids</h3>
+        </div>
+        <div class="pest-body">
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Symptoms:</div>
+                <div class="pest-symptom-text">
+                    Yellowing leaves, curling, sticky residue, whitish powder on leaves. Stunted growth.
+                </div>
+            </div>
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Affected Crops:</div>
+                <div class="pest-symptom-text">
+                    Wheat, Mustard, Pulses, Vegetables
+                </div>
+            </div>
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Management:</div>
+                <div class="pest-symptom-text">
+                    Spray neem oil spray (3%) or insecticide. Use reflective mulches. Remove affected leaves early.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaf Rust -->
+    <div class="pest-card">
+        <div class="pest-header">
+            <h3 class="pest-name">🍂 Leaf Rust</h3>
+        </div>
+        <div class="pest-body">
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Symptoms:</div>
+                <div class="pest-symptom-text">
+                    Brown/orange pustules on leaf undersides, yellowing around spots, premature leaf drop.
+                </div>
+            </div>
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Affected Crops:</div>
+                <div class="pest-symptom-text">
+                    Wheat, Barley, Oats
+                </div>
+            </div>
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Management:</div>
+                <div class="pest-symptom-text">
+                    Use resistant varieties. Spray sulphur or fungicides like Mancozeb when needed. Improve spacing for airflow.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stem Borer -->
+    <div class="pest-card">
+        <div class="pest-header">
+            <h3 class="pest-name">🦟 Stem Borer</h3>
+        </div>
+        <div class="pest-body">
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Symptoms:</div>
+                <div class="pest-symptom-text">
+                    Holes in stems, weak tillers, broken stems, "dead heart" appearance in young plants.
+                </div>
+            </div>
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Affected Crops:</div>
+                <div class="pest-symptom-text">
+                    Rice, Maize, Sugarcane, Wheat
+                </div>
+            </div>
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Management:</div>
+                <div class="pest-symptom-text">
+                    Remove affected tillers, use pheromone traps, spray Quinalphos 1.5% or Bacillus thuringiensis.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pod Borer -->
+    <div class="pest-card">
+        <div class="pest-header">
+            <h3 class="pest-name">🐛 Pod Borer</h3>
+        </div>
+        <div class="pest-body">
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Symptoms:</div>
+                <div class="pest-symptom-text">
+                    Holes in pods, damaged seeds, frass (droppings) inside pods, immature seed fall.
+                </div>
+            </div>
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Affected Crops:</div>
+                <div class="pest-symptom-text">
+                    Chickpea, Pigeonpea, Mustard, Tomato
+                </div>
+            </div>
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Management:</div>
+                <div class="pest-symptom-text">
+                    Bacillus thuringiensis spray, hand-pick affected pods, use neem oil, apply carbaryl 50 WP.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Powdery Mildew -->
+    <div class="pest-card">
+        <div class="pest-header">
+            <h3 class="pest-name">☁️ Powdery Mildew</h3>
+        </div>
+        <div class="pest-body">
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Symptoms:</div>
+                <div class="pest-symptom-text">
+                    White powdery coating on leaves, stems, flowers. Leaves become pale and distorted.
+                </div>
+            </div>
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Affected Crops:</div>
+                <div class="pest-symptom-text">
+                    Mustard, Coriander, Grapes, Vegetables
+                </div>
+            </div>
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Management:</div>
+                <div class="pest-symptom-text">
+                    Spray sulphur 0.5% or Trichoderma powder. Reduce humidity, improve spacing, use resistant varieties.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blast/Neck Blast -->
+    <div class="pest-card">
+        <div class="pest-header">
+            <h3 class="pest-name">💥 Blast Disease</h3>
+        </div>
+        <div class="pest-body">
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Symptoms:</div>
+                <div class="pest-symptom-text">
+                    Gray-green spots on leaves/panicles, broke necks in advanced stage, rotted grain.
+                </div>
+            </div>
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Affected Crops:</div>
+                <div class="pest-symptom-text">
+                    Rice (mainly), Wheat, Barley
+                </div>
+            </div>
+            <div class="pest-symptom">
+                <div class="pest-symptom-title">Management:</div>
+                <div class="pest-symptom-text">
+                    Reduce nitrogen fertilizer, use resistant varieties, spray Tricyclazole or Propiconazole at flag leaf stage.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" style="margin-top: 2rem;">
+    <h2 style="margin-top: 0;">💡 General Pest Management Tips</h2>
+    <ol style="color: var(--text-muted); padding-left: 2rem; line-height: 1.8;">
+        <li><strong>Scout regularly:</strong> Check fields in early morning for pest presence.</li>
+        <li><strong>Use resistant varieties:</strong> Choose pest-resistant seeds for your region.</li>
+        <li><strong>Maintain field hygiene:</strong> Remove weeds and crop residues.</li>
+        <li><strong>Practice crop rotation:</strong> Change crops annually to break pest cycles.</li>
+        <li><strong>Use balanced nutrition:</strong> Healthy plants resist pests better.</li>
+        <li><strong>Encourage natural enemies:</strong> Keep flowering plants to attract beneficial insects.</li>
+        <li><strong>Use pesticides wisely:</strong> Follow dosage, coat entire plant, and observe harvest interval.</li>
+        <li><strong>Keep records:</strong> Document pest appearance for future reference.</li>
+    </ol>
+</div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'frontend/base.html' %}
+{% block title %}Chat with AI - Kisan_Setu AI{% endblock %}
+{% block page_name %}chat{% endblock %}
+{% block content %}
+
+<div class="chat-container">
+    <div class="chat-header">
+        <div class="chat-title">
+            <h2>Chat with Kisan_Setu AI</h2>
+            <p style="color: var(--text-muted); margin: 0; font-size: 0.9rem;">Ask about crops, weather, fertilizers...</p>
+        </div>
+        <div class="language-toggle" role="group">
+            <button type="button" class="lang-btn active" data-lang="en">English</button>
+            <button type="button" class="lang-btn" data-lang="hi">हिंदी</button>
+        </div>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+        <div class="chat-message assistant">
+            <div class="chat-bubble">
+                नमस्ते! 👋 मैं आपके कृषि सवालों के जवाब देने के लिए यहाँ हूँ। आप फसल, मौसम, खाद, कीटों या बाजार की कीमतों के बारे में पूछ सकते हैं।
+                <br><br>
+                Hello! 👋 I'm here to answer your farming questions. Ask me about crops, weather, fertilizers, pests, or market prices.
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-input-area">
+        <form id="chatForm" style="width: 100%; display: flex; gap: 0.75rem;">
+            <div class="chat-input">
+                <input 
+                    type="text" 
+                    id="messageInput" 
+                    placeholder="Type your question..."
+                    autocomplete="off"
+                    required
+                >
+                <button type="button" id="voiceButton" class="voice-btn" title="Voice input">
+                    🎤
+                </button>
+            </div>
+            <button type="submit" class="btn btn-primary btn-small">Send</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

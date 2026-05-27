@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisan_Setu AI - Smart Farming Guidance</title>
+    <meta name="description" content="AI-powered agricultural assistant helping farmers with crops, weather, and market prices.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <header id="navbar" class="navbar">
+        <div class="container navbar-content">
+            <div class="logo" onclick="navigateTo('landing')">
+                <i data-lucide="sprout" class="logo-icon"></i>
+                <span class="logo-text">Kisan_Setu <span class="highlight">AI</span></span>
+            </div>
+            <nav class="nav-links">
+                <a href="#" onclick="navigateTo('landing')">Home</a>
+                <a href="#" onclick="navigateTo('chat')">Ask AI</a>
+                <a href="#" onclick="navigateTo('weather')">Weather</a>
+                <a href="#" onclick="navigateTo('mandi')">Mandi Prices</a>
+                <a href="#" onclick="navigateTo('profile')">My Farm</a>
+                <a href="#" onclick="navigateTo('about')">About</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="nav-auth-btn" onclick="navigateTo('auth')">
+                    Login
+                </button>
+                <button class="btn btn-logout" id="nav-logout-btn" onclick="handleLogout()" style="display:none;">
+                    Logout
+                </button>
+                <button class="btn btn-primary" onclick="navigateTo('chat')">
+                    Ask a Question
+                </button>
+            </div>
+            <button class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <main id="app-root">
+        <!-- Views will be rendered here -->
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i data-lucide="sprout" class="logo-icon"></i>
+                    <span class="logo-text">Kisan_Setu <span class="highlight">AI</span></span>
+                </div>
+                <p>Empowering farmers with intelligent guidance for a better tomorrow.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Resources</h4>
+                    <a href="#">Smart Farming Assistance</a>
+                    <a href="#">Soil Guides</a>
+                    <a href="#">Crop Guides</a>
+                </div>
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <a href="#" onclick="navigateTo('about')">About Us</a>
+                    <a href="#">Mission</a>
+                    <a href="#">Team</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kisan_Setu AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Markdown parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Scripts -->
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>

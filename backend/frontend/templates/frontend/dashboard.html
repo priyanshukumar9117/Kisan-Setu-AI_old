@@ -1,0 +1,79 @@
+{% extends 'frontend/base.html' %}
+{% block title %}Dashboard - Kisan_Setu AI{% endblock %}
+{% block page_name %}dashboard{% endblock %}
+{% block content %}
+
+<h1>Dashboard</h1>
+<p style="color: var(--text-muted); margin-bottom: 2rem;">Real-time information for smarter farming decisions</p>
+
+<!-- Weather Section -->
+<h2 style="margin-top: 2rem; margin-bottom: 1rem;">Current Weather</h2>
+<div class="dashboard-grid">
+    <div class="weather-card card">
+        <div class="card-header">
+            <div class="card-icon">☀️</div>
+            <div>
+                <h3 class="card-title">Weather Today</h3>
+                <p class="card-text">Patna, Bihar</p>
+            </div>
+        </div>
+        <div style="padding: 1rem 0;">
+            <div class="temp-display">
+                <span class="stat-value">25°C</span>
+            </div>
+            <p class="card-text">Humidity: 65% | Wind: 12 km/h</p>
+            <p class="card-text" style="margin-top: 0.5rem;">Clear skies - Good for field work</p>
+        </div>
+    </div>
+</div>
+
+<!-- Crop Recommendations -->
+<h2 style="margin-top: 2rem; margin-bottom: 1rem;">Recommended Crops This Season</h2>
+<div class="crop-recommendations"></div>
+
+<!-- Market Prices -->
+<h2 style="margin-top: 2rem; margin-bottom: 1rem;">Market Prices Today</h2>
+<div class="market-prices"></div>
+
+<!-- Quick Actions -->
+<h2 style="margin-top: 2rem; margin-bottom: 1rem;">Quick Actions</h2>
+<div class="dashboard-grid">
+    <a href="{% url 'chat' %}" class="card" style="text-decoration: none; cursor: pointer; transition: all 0.3s ease;">
+        <div class="card-header">
+            <div class="card-icon">💬</div>
+            <div>
+                <h3 class="card-title">Ask a Question</h3>
+                <p class="card-text">Get instant farming advice</p>
+            </div>
+        </div>
+    </a>
+    <a href="{% url 'pest_guide' %}" class="card" style="text-decoration: none; cursor: pointer; transition: all 0.3s ease;">
+        <div class="card-header">
+            <div class="card-icon">🐛</div>
+            <div>
+                <h3 class="card-title">Pest Guide</h3>
+                <p class="card-text">Identify and manage pests</p>
+            </div>
+        </div>
+    </a>
+    <a href="{% url 'calendar' %}" class="card" style="text-decoration: none; cursor: pointer; transition: all 0.3s ease;">
+        <div class="card-header">
+            <div class="card-icon">📅</div>
+            <div>
+                <h3 class="card-title">Farm Calendar</h3>
+                <p class="card-text">Plan your farm activities</p>
+            </div>
+        </div>
+    </a>
+    <a href="{% url 'history' %}" class="card" style="text-decoration: none; cursor: pointer; transition: all 0.3s ease;">
+        <div class="card-header">
+            <div class="card-icon">📜</div>
+            <div>
+                <h3 class="card-title">Chat History</h3>
+                <p class="card-text">Review your conversations</p>
+            </div>
+        </div>
+    </a>
+</div>
+
+{% endblock %}
