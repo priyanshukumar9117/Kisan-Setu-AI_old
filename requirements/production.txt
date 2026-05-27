@@ -1,0 +1,27 @@
+# Production requirements - Minimal ML stack
+-r base.txt
+
+# RAG & LLM (lightweight alternatives)
+chromadb>=0.4.0
+langchain>=0.1.0
+langchain-community
+pypdf
+
+# TTS (pick ONE based on preference)
+# Option 1: gTTS (Google Text-to-Speech - smallest footprint)
+gTTS>=2.2.0
+# Option 2: edge-tts (Microsoft - good quality, smaller than pyttsx3)
+edge-tts>=7.1.0
+
+# Transformers for embeddings only (sentence-transformers is more efficient)
+sentence-transformers>=2.2.0
+
+# Speech Recognition (lighter alternative to openai-whisper)
+# Uncomment ONE of these:
+# openai-whisper (if you need it, ~1GB)
+# OR use Google's speech API for production
+
+# NOTE: For production with 512MB RAM on Render:
+# - torch and torchvision should NOT be included
+# - Use API-based services (Google Cloud Speech-to-Text, Google Generative AI)
+# - For embeddings, use API endpoints instead of local transformers

@@ -8,11 +8,11 @@ services:
     plan: starter
     buildCommand: |
       pip install --upgrade pip && \
-      pip install -r requirements.txt && \
+      pip install -r requirements/production-minimal.txt && \
       cd backend && \
       python manage.py migrate && \
-      python manage.py collectstatic --noinput
-    startCommand: cd backend && gunicorn django_project.wsgi:application --bind 0.0.0.0:8000 --workers 3 --worker-class sync --timeout 60
+      python manage.py collectstatic --noinput --ignore=node_modules
+    startCommand: cd backend && gunicorn django_project.wsgi:application --bind 0.0.0.0:8000 --workers 1 --worker-class sync --timeout 60 --max-requests 1000 --max-requests-jitter 50
     envVars:
       - fromGroup: kisan-setu-env
     disk:
@@ -37,7 +37,7 @@ services:
     name: kisan-setu-bot
     env: python
     plan: starter
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r requirements/production-minimal.txt
     startCommand: python telegram_bot/bot.py
     envVars:
       - fromGroup: kisan-setu-env

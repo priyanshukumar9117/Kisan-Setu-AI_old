@@ -1,44 +1,12 @@
-Django>=4.2,<5.0
-djangorestframework
-python-telegram-bot
-chromadb
-langchain
-langchain-community
-pypdf
-sentence-transformers
-openai-whisper
-gTTS
-pyttsx3
-edge-tts
-python-dotenv
-requests
-imageio-ffmpeg
-transformers
-torch
-torchvision
-Pillow
-google-generativeai
-Django>=4.2,<5.0
-djangorestframework
-python-telegram-bot
-chromadb
-langchain
-langchain-community
-pypdf
-sentence-transformers
-openai-whisper
-gTTS
-pyttsx3
-edge-tts
-python-dotenv
-requests
-imageio-ffmpeg
-transformers
-torch
-torchvision
-Pillow
-google-generativeai
-gunicorn>=21.0
-whitenoise>=6.5
-psycopg2-binary>=2.9
-sentry-sdk>=1.0
+# === REQUIREMENTS MANAGEMENT ===
+# See REQUIREMENTS_GUIDE.md for detailed information
+# 
+# Do NOT use this file directly. Instead, use:
+#
+# Development (local): pip install -r requirements/development.txt
+# Production (minimal): pip install -r requirements/production-minimal.txt  
+# Production (full): pip install -r requirements/production.txt
+#
+# For Render deployment: Uses production-minimal.txt (see render.yaml)
+
+-r requirements/production-minimal.txt

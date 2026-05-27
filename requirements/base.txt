@@ -1,0 +1,15 @@
+# Core Django
+Django>=4.2,<5.0
+djangorestframework
+gunicorn>=21.0
+whitenoise>=6.5
+psycopg2-binary>=2.9
+sentry-sdk>=1.0
+
+# Bot & API
+python-telegram-bot
+python-dotenv
+requests
+
+# Utilities
+Pillow

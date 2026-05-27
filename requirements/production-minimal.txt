@@ -1,0 +1,43 @@
+# Ultra-minimal production requirements for 512MB RAM Render deployment
+# This only includes the bare essentials. Use API services for ML operations.
+
+# Core Django
+Django>=4.2,<5.0
+djangorestframework
+gunicorn>=21.0
+whitenoise>=6.5
+psycopg2-binary>=2.9
+sentry-sdk>=1.0
+
+# Bot & API
+python-telegram-bot
+python-dotenv
+requests
+
+# Utilities
+Pillow
+
+# Minimal RAG - chromadb without heavy dependencies
+chromadb>=0.4.0
+pypdf
+
+# Lightweight LLM integration
+langchain>=0.1.0
+langchain-community
+tenacity
+
+# TTS - use edge-tts (lighter than pyttsx3 or full transformers)
+edge-tts>=7.1.0
+
+# Google Cloud APIs (recommended for production)
+# Uncomment if using Google Cloud services:
+# google-cloud-speech
+# google-cloud-texttospeech
+# google-generativeai
+
+# NOTE: This excludes:
+# ✗ torch/torchvision (use API instead)
+# ✗ transformers (use sentence-transformers API or Google Embeddings API)
+# ✗ openai-whisper (use Google Speech-to-Text API)
+# ✗ pyttsx3 (heavier than edge-tts)
+# ✗ imageio-ffmpeg (only needed for video processing)

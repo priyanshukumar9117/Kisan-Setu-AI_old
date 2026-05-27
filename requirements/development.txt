@@ -1,0 +1,36 @@
+# Development requirements - Full feature set
+-r base.txt
+
+# RAG & LLM
+chromadb
+langchain
+langchain-community
+langchain-core
+langsmith
+langgraph
+langgraph-prebuilt
+pypdf
+
+# Speech & Audio
+openai-whisper
+gTTS
+pyttsx3
+edge-tts
+imageio-ffmpeg
+
+# Embeddings & ML
+sentence-transformers
+transformers
+torch
+torchvision
+
+# Images
+Pillow
+
+# AI APIs
+google-generativeai
+
+# Testing (optional, uncomment if needed)
+# pytest>=7.0
+# pytest-django
+# pytest-cov
