@@ -1,5 +1,7 @@
 // features.js — Auth, Profile, Weather, Mandi, Disease logic
-const API = 'http://localhost:8000';
+import { APP_CONFIG } from './config.js';
+
+const API = APP_CONFIG.apiBaseURL;
 
 // ── Auth ──
 window.switchAuthTab = function(tab) {

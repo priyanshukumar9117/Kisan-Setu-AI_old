@@ -540,3 +540,60 @@ def get_districts(request):
     """Return list of all Bihar districts."""
     from weather.bihar_districts import get_all_districts
     return Response({"districts": get_all_districts()})
+
+
+@api_view(['GET'])
+def health_check(request):
+    """
+    Health check endpoint for monitoring and uptime monitoring services.
+    Returns status of database, vector store, and other critical components.
+    """
+    from django.db import connection
+    from django.utils import timezone
+    
+    health_status = {
+        "status": "healthy",
+        "timestamp": timezone.now().isoformat(),
+        "environment": settings.ENVIRONMENT,
+        "components": {}
+    }
+    
+    # Check database
+    try:
+        cursor = connection.cursor()
+        cursor.execute("SELECT 1")
+        connection.queries_log.clear()
+        health_status["components"]["database"] = "healthy"
+    except Exception as e:
+        health_status["status"] = "degraded"
+        health_status["components"]["database"] = f"error: {str(e)}"
+    
+    # Check ChromaDB vector store
+    try:
+        import os
+        if os.path.exists('chroma_db'):
+            from langchain_community.vectorstores import Chroma
+            db = Chroma(persist_directory='chroma_db')
+            doc_count = db._collection.count() if hasattr(db, '_collection') else 0
+            health_status["components"]["vector_store"] = f"healthy ({doc_count} vectors)"
+        else:
+            health_status["components"]["vector_store"] = "not_initialized"
+    except Exception as e:
+        health_status["components"]["vector_store"] = f"error: {str(e)}"
+    
+    # Check Ollama availability (if configured)
+    try:
+        if settings.OLLAMA_BASE_URL:
+            import requests
+            resp = requests.get(f"{settings.OLLAMA_BASE_URL}/api/tags", timeout=5)
+            if resp.status_code == 200:
+                health_status["components"]["llm"] = "healthy"
+            else:
+                health_status["components"]["llm"] = "offline"
+    except Exception:
+        health_status["components"]["llm"] = "offline"
+    
+    # Determine overall status code
+    status_code = 200 if health_status["status"] == "healthy" else 503
+    
+    return Response(health_status, status=status_code)
